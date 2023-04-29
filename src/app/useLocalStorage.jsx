@@ -22,7 +22,7 @@ function useLocalStorage(itemName, initilaValue) {
       } catch (error) {
         setError(error);
       }
-    }, 1000);
+    }, 3000);
   });
 
   // persistir la informacion

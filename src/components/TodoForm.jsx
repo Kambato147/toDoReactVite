@@ -1,10 +1,8 @@
 import React from "react";
-import { TodoContext } from "../context";
 import "../styles/TodoForm.css";
 
-function TodoForm() {
+function TodoForm({ addTodo, setOpenModal }) {
   const [inputValue, setInputValue] = React.useState("");
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
 
   const onChange = (event) => {
     setInputValue(event.target.value);
@@ -35,7 +33,7 @@ function TodoForm() {
           <i className="fa-regular fa-circle-xmark fa-xl"></i>
         </button>
         <button type="submit" className="TodoForm-button TodoForm-button-add">
-          <i class="fa-regular fa-circle-check fa-xl"></i>
+          <i className="fa-regular fa-circle-check fa-xl"></i>
         </button>
       </div>
     </form>

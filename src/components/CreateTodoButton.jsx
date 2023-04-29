@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "../styles/CreateTodoButton.css";
 
 function CreateTodoButton(props) {
@@ -7,7 +7,7 @@ function CreateTodoButton(props) {
   };
 
   return (
-    <button className="CreateTodoButton animate__bounce" onClick={btnClick}>
+    <button className="CreateTodoButton" onClick={btnClick} title="button create">
       <i className="fa-solid fa-circle-plus fa-sm"></i>
     </button>
   );

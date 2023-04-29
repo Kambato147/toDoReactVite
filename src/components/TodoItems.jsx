@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "../styles/TodoItems.css";
 
 function TodoItems(props) {
@@ -14,7 +14,7 @@ function TodoItems(props) {
         {props.text}
       </p>
       <span className="Icon Icon-delete" onClick={props.onDelete}>
-        <i class="fa-regular fa-trash-can"></i>
+        <i className="fa-regular fa-trash-can"></i>
       </span>
     </li>
   );

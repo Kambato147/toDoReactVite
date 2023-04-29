@@ -2,7 +2,7 @@
   text-align: center;
 }
 body {
-  background-color: #031956;
+  background-color: #135572;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,15 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.empty {
+  text-align: center;
+}
+
+.empty .color {
+  color: tomato;
+  font-weight: bold;
 }
 
 #root {
