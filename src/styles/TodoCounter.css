@@ -4,6 +4,10 @@
   padding: 18px;
 }
 
+.tdc--loading {
+  opacity: 25%;
+}
+
 .title-word {
   animation: color-animation 4s linear infinite;
 }

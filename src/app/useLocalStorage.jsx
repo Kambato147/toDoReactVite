@@ -1,9 +1,11 @@
 import React from "react";
 
 function useLocalStorage(itemName, initilaValue) {
+  const [sincronizedItem, setSincronizedItem] = React.useState(true);
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [item, setItem] = React.useState(initilaValue);
+
   // simular una consulta a una API
   React.useEffect(() => {
     setTimeout(() => {
@@ -21,9 +23,10 @@ function useLocalStorage(itemName, initilaValue) {
         setLoading(false);
       } catch (error) {
         setError(error);
+        setSincronizedItem(true);
       }
     }, 3000);
-  });
+  }, [sincronizedItem]);
 
   // persistir la informacion
   const saveItem = (newItem) => {
@@ -36,7 +39,13 @@ function useLocalStorage(itemName, initilaValue) {
     }
   };
 
-  return { item, saveItem, loading, error };
+  // sincronizacion
+  const syncItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  };
+
+  return { item, saveItem, loading, error, syncItem };
 }
 
 export { useLocalStorage };

@@ -14,3 +14,8 @@
 .td-search:focus {
   outline-color: #61dafa;
 }
+
+.td-search:disabled {
+  cursor: wait;
+  opacity: 25%;
+}

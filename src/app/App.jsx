@@ -10,6 +10,7 @@ import { TodoHeader } from "../components/TodoHeader";
 import { TdEmpty } from "../components/TdEmpty";
 import { TdError } from "../components/TdError";
 import { TdLoading } from "../components/TdLoading";
+import { ChangeAlertWithStorageListener } from "../components/listener/ChangeAlert";
 import "./App.css";
 
 function App() {
@@ -26,10 +27,11 @@ function App() {
     search,
     setSearch,
     addTodo,
+    syncTodos,
   } = useToDos();
   return (
     <>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter completedTodos={completedTodos} totalTodos={totalTodos} />
         <TodoSearch search={search} setSearch={setSearch} />
       </TodoHeader>
@@ -44,8 +46,7 @@ function App() {
         onEmpty={() => <TdEmpty />}
         onEmptySearch={(searchText) => (
           <p className="empty">
-            No hubo resultado para{" "}
-            <span className="color">{searchText}</span>
+            No hubo resultado para <span className="color">{searchText}</span>
           </p>
         )}
 
@@ -80,6 +81,7 @@ function App() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
+      <ChangeAlertWithStorageListener sincronize={syncTodos} />
     </>
   );
 }
