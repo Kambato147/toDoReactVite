@@ -25,7 +25,7 @@ function useLocalStorage(itemName, initilaValue) {
         setError(error);
         setSincronizedItem(true);
       }
-    }, 3000);
+    }, 1000);
   }, [sincronizedItem]);
 
   // persistir la informacion

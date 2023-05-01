@@ -10,7 +10,7 @@ import { TodoHeader } from "../components/TodoHeader";
 import { TdEmpty } from "../components/TdEmpty";
 import { TdError } from "../components/TdError";
 import { TdLoading } from "../components/TdLoading";
-import { ChangeAlertWithStorageListener } from "../components/listener/ChangeAlert";
+import { ChangeAlert } from "../components/listener/ChangeAlert";
 import "./App.css";
 
 function App() {
@@ -71,7 +71,7 @@ function App() {
               onDelete={() => deleteTodo(todo.text)}
             />
           )
-          //esto es una render funcion
+          //esto es una render huok
         }
       </TodoList>
       {!!openModal && (
@@ -81,9 +81,11 @@ function App() {
         </Modal>
       )}
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <ChangeAlertWithStorageListener sincronize={syncTodos} />
+      <ChangeAlert sincronize={syncTodos} />
     </>
   );
 }
+
+// cuando se marca como check se va al carako
 
 export default App;

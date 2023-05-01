@@ -1,18 +1,29 @@
-import { withStoragelistener } from "./withStorageListen";
+import { useStoragelistener } from "./useStorageListen";
+import "./ChangeAlert.css";
 
-function ChangeAlert({ show, toggleShow }) {
+function ChangeAlert({ sincronize }) {
+  const { show, toggleShow } = useStoragelistener(sincronize);
   if (show) {
     return (
-      <diiv>
-        <p>Up!! paso algo</p>
-        <button onClick={() => toggleShow(false)}>Reload</button>
-      </diiv>
+      <div className="ChangeAlert-bg">
+        <div className="ChangeAlert-container">
+          <p>
+            Parece que cambiaste tus ToDos en otra pestaña o ventana del
+            navegador.
+          </p>
+          <p>¿Quieres sincronizar tus TODOs?</p>
+          <button
+            className="TodoForm-button TodoForm-button--add btn"
+            onClick={toggleShow}
+          >
+            Yes!
+          </button>
+        </div>
+      </div>
     );
   } else {
     return null;
   }
 }
 
-const ChangeAlertWithStorageListener = withStoragelistener(ChangeAlert);
-
-export { ChangeAlertWithStorageListener };
+export { ChangeAlert };
