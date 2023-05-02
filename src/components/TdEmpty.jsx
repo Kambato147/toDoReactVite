@@ -1,6 +1,6 @@
 function TdEmpty() {
   const style = {
-    "text-align": " center",
+    "textAlign": " center",
   };
   return <p style={style}>¡Crea tu primer ToDos!</p>;
 }

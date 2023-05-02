@@ -14,21 +14,22 @@ import { ChangeAlert } from "../components/listener/ChangeAlert";
 import "./App.css";
 
 function App() {
+  const { states, stateUpdate } = useToDos();
+
   const {
-    error,
     loading,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
+    error,
     completedTodos,
     totalTodos,
     search,
     setSearch,
-    addTodo,
-    syncTodos,
-  } = useToDos();
+    searchedTodos,
+    openModal,
+  } = states;
+
+  const { addTodo, completeTodo, deleteTodo, setOpenModal, syncTodos } =
+    stateUpdate;
+
   return (
     <>
       <TodoHeader loading={loading}>
@@ -85,7 +86,5 @@ function App() {
     </>
   );
 }
-
-// cuando se marca como check se va al carako
 
 export default App;
